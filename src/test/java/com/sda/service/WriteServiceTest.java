@@ -44,4 +44,17 @@ public class WriteServiceTest {
 
         Assert.assertEquals("HELLO, ADAM!", result);
     }
+
+    @Test
+    public void testEmptyName() {
+        String name = "";
+        Assert.assertEquals("Hello, my friend.", writerService.write(name));
+    }
+
+    @Test
+    public void testBlankName() {
+        String name = "        ";
+        Assert.assertEquals("Hello, my friend.", writerService.write(name));
+    }
+
 }
