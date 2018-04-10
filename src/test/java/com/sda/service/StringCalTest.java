@@ -1,5 +1,6 @@
-package com.sda.stringCalculator;
+package com.sda.service;
 
+import com.sda.service.StringCal;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

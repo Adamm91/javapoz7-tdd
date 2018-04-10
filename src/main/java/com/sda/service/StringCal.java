@@ -1,4 +1,4 @@
-package com.sda.stringCalculator;
+package com.sda.service;
 
 import org.apache.commons.lang3.StringUtils;
 
