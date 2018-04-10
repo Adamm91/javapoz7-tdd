@@ -57,4 +57,16 @@ public class WriteServiceTest {
         Assert.assertEquals("Hello, my friend.", writerService.write(name));
     }
 
+    @Test
+    public void testFewNames() {
+        String name = "Adam,Bartek,John";
+        Assert.assertEquals("Hello, Adam, Bartek and John." , writerService.write(name));
+    }
+
+    @Test
+    public void testFewCapitalizedNames() {
+        String name = "ADAM,BARTEK,JOHN";
+        Assert.assertEquals("HELLO, ADAM, BARTEK AND JOHN!", writerService.write(name));
+    }
+
 }
