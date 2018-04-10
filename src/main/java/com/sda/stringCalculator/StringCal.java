@@ -2,6 +2,8 @@ package com.sda.stringCalculator;
 
 import org.apache.commons.lang3.StringUtils;
 
+import java.util.Arrays;
+
 public class StringCal {
 
     public int calculate (String text) {
@@ -9,11 +11,9 @@ public class StringCal {
         String withoutSpaces = StringUtils.deleteWhitespace(text);
         String[] numbers = StringUtils.split(withoutSpaces, ";");
         numbers = numbers == null ? new String[0] : numbers;
-        int sum = 0;
-        for (String number : numbers) {
-            sum += Integer.valueOf(number);
-        }
-        return sum;
+        return Arrays.stream(numbers)
+                .mapToInt(e -> Integer.valueOf(e))
+                .sum();
     }
 
 
