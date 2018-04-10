@@ -6,8 +6,9 @@ public class StringCal {
 
     public int calculate (String text) {
 //         if (StringUtils.isBlank(text) return 0;
-        String result = isNullOrBlank(text) ? "0" : StringUtils.deleteWhitespace(text);
-        String[] numbers = result.split(";");
+        String withoutSpaces = StringUtils.deleteWhitespace(text);
+        String[] numbers = StringUtils.split(withoutSpaces, ";");
+        numbers = numbers == null ? new String[0] : numbers;
         int sum = 0;
         for (String number : numbers) {
             sum += Integer.valueOf(number);
@@ -15,8 +16,5 @@ public class StringCal {
         return sum;
     }
 
-    public boolean isNullOrBlank (String text) {
-        return StringUtils.isBlank(text);
-    }
 
 }
