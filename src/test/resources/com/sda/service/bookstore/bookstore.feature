@@ -12,3 +12,5 @@ Feature:
       When I add book to bookstore
       And I can change the title
       Then Book title is changed
+
+  Scenario:
